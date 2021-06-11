@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* background: #E3E3E3; */
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  grid-template-rows: 40% 20% 40%;
+  width: 100%;
+  height: 100vw;
+  border: 1px solid #000;
+  /* box-shadow: 0px 15px 20px #9F9F9F, -0px -15px 20px #9F9F9F; */
+}
+
+.center {
+  border-left: 10vw outset #ec1b21;
+  border-top: 10vw inset #38EA6C;
+  border-bottom: 10vw inset #016fff;
+  border-right: 10vw inset #FFC700;
+}
+
+.path-zone-r1,
+.path-zone-r2 {
+  display: grid;
+}
+
+.path-zone-r2 {
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.path-zone-r1 {
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto;
+}
+
+.path-box {
+  background: #fff;
+  height: 6.6666666667vw;
+  width: 6.6666666667vw;
+  border: 0.01rem solid black;
+  position: relative;
+}
+
+.path-zone-r1 .path-box {
+  height: 16.6666666666%;
+  width: 33.3333333333%;
+  height: 100%;
+  width: 100%;
+}
+
+.path-zone-r2 .path-box {
+  width: 16.6666666666%;
+  height: 33.3333333333%;
+  height: 100%;
+  width: 100%;
+}
+
+.piece-container {
+  background: #fff;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  place-items: center;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+}
+
+.piece-home {
+  height: 70%;
+  width: 70%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.home-box {
+  display: grid;
+  padding: 6.666666667vw;
+  place-items: center;
+}
+
+.bg-red {
+  background: #ec1b21;
+}
+
+.bg-blue {
+  background: #016FFF;
+}
+
+.bg-green {
+  background: #019f48;
+}
+
+.bg-yellow {
+  background: #FFC700;
+}
+
+.red {
+  color: #EC1B21;
+}
+
+.blue {
+  color: #016FFF;
+}
+
+.green {
+  color: #019f48;
+}
+
+.yellow {
+  color: #FFC700;
+}
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.piece {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  z-index: 999;
+  transform: translate(10%, -30%);
+}
+
+.ypiece {
+  filter: invert(85%) sepia(57%) saturate(2379%) hue-rotate(358deg) brightness(100%) contrast(106%);
+}
+
+.rpiece {
+  filter: invert(27%) sepia(73%) saturate(7722%) hue-rotate(376deg) brightness(71%) contrast(104%);
+}
+
+.bpiece {
+  filter: invert(20%) sepia(81%) saturate(2554%) hue-rotate(206deg) brightness(101%) contrast(108%);
+}
+
+.gpiece {
+  filter: invert(24%) sepia(85%) saturate(1214%) hue-rotate(120deg) brightness(98%) contrast(99%);
+}
+
+.player-card {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.avtar {
+  height: 40px;
+  width: 40px;
+  border-radius: 20%;
+}
+
+.player-profile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+
+.app {
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.dice-box {
+  height: 70px;
+  width: 70px;
+  display: grid;
+  border: 5px groove #A59FA2;
+  background: #A5D6C2;
+  border-radius: 5px;
+}
+
+.dice {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #FF208B;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto auto;
+  margin: auto;
+  box-shadow: 10px 10px 10px #1B1B1B, -10px -10px -10px #1B1B1B;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin: auto;
+  pointer-events: none;
+}
+
+.bg-white {
+  background: #fff;
+  pointer-events: none;
+}
+
+.diceLoad {
+  height: 200px;
+}
+
+@media screen and (min-width:667px) {
+  .board-container {
+    flex-direction: row;
+  }
+
+  .player-card {
+    flex-direction: column;
+  }
+
+  .app {
+    display: initial;
+    width: 100%;
+  }
+
+  .board {
+    height: 100vh;
+    width: 400vh;
+  }
+
+  .home-box {
+    padding: 6.6666666667vh;
+  }
+
+  .center {
+    border-left: 10vh outset #ec1b21;
+    border-top: 10vh inset #38EA6C;
+    border-bottom: 10vh inset #016fff;
+    border-right: 10vh inset #FFC700;
+  }
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+  background: #EEEEEE;
+}
+::-webkit-scrollbar-thumb{
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background: #42445A;
+}
